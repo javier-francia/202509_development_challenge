@@ -1,6 +1,7 @@
 ﻿using DevelopmentChallenge.Data.Enums;
 using DevelopmentChallenge.Data.Localizacion;
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Resources;
 using System.Threading;
@@ -66,7 +67,7 @@ namespace DevelopmentChallenge.Data.Helpers
                 throw new ArgumentException("La clave de recurso no puede ser nula o vacía.", nameof(clave));
             }
 
-            string valorObtenido = _rm.GetString(clave, CultureInfo.CurrentUICulture) ?? throw new NotImplementedException("No existe el recurso de localización buscado.");
+            string valorObtenido = _rm.GetString(clave, CultureInfo.CurrentUICulture) ?? throw new KeyNotFoundException("No existe el recurso de localización buscado.");
 
             if (args == null || args.Length == 0)
             {

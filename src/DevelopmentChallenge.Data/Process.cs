@@ -34,7 +34,7 @@ namespace DevelopmentChallenge.Data
             traduccionHelper = new TraduccionHelper(idioma);
 
             // No hay formas, devuelvo solo HEADER
-            if (formas.Count == 0)
+            if (formas == null || formas.Count == 0)
             {
                 return ObtenerRespuestaSinFormas();
             }

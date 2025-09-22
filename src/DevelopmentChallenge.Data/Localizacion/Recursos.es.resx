@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AREA" xml:space="preserve">
-    <value>Area {0}</value>
+    <value>Área {0}</value>
   </data>
   <data name="CIRCULO_PLURAL" xml:space="preserve">
     <value>{0} Círculos</value>
@@ -145,7 +145,7 @@
     <value>Lista vacía de formas!</value>
   </data>
   <data name="PERIMETRO" xml:space="preserve">
-    <value>Perimetro {0}</value>
+    <value>Perímetro {0}</value>
   </data>
   <data name="TOTAL" xml:space="preserve">
     <value>TOTAL</value>

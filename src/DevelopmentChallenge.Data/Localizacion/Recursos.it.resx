@@ -118,42 +118,42 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AREA" xml:space="preserve">
-    <value />
+    <value>Area {0}</value>
   </data>
   <data name="CIRCULO_PLURAL" xml:space="preserve">
-    <value>cerchi</value>
+    <value>{0} Cerchi</value>
   </data>
   <data name="CIRCULO_SINGULAR" xml:space="preserve">
-    <value>cerchio</value>
+    <value>{0} Cerchio</value>
   </data>
   <data name="CUADRADO_PLURAL" xml:space="preserve">
-    <value />
+    <value>{0} Quadrati</value>
   </data>
   <data name="CUADRADO_SINGULAR" xml:space="preserve">
-    <value />
+    <value>{0} Quadrato</value>
   </data>
   <data name="FORMA_PLURAL" xml:space="preserve">
-    <value>forme</value>
+    <value>{0} forme</value>
   </data>
   <data name="FORMA_SINGULAR" xml:space="preserve">
-    <value>forma</value>
+    <value>{0} forma</value>
   </data>
   <data name="LISTA_CABECERA" xml:space="preserve">
-    <value />
+    <value>Report delle Forme</value>
   </data>
   <data name="LISTA_VACIA" xml:space="preserve">
-    <value />
+    <value>Lista vuota di forme!</value>
   </data>
   <data name="PERIMETRO" xml:space="preserve">
-    <value />
+    <value>Perimetro {0}</value>
   </data>
   <data name="TOTAL" xml:space="preserve">
-    <value />
+    <value>TOTAL</value>
   </data>
   <data name="TRIANGULO_PLURAL" xml:space="preserve">
-    <value />
+    <value>{0} Triangoli</value>
   </data>
   <data name="TRIANGULO_SINGULAR" xml:space="preserve">
-    <value />
+    <value>{0} Triangolo</value>
   </data>
 </root>

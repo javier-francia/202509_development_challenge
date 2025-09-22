@@ -20,8 +20,8 @@
         {
             public const string LISTA_CABECERA = "LISTA_CABECERA";
             public const string LISTA_VACIA = "LISTA_VACIA";
-            public const string AREA = "AREA";            // "Área: {0}"
-            public const string PERIMETRO = "PERIMETRO";       // "Perímetro: {0}"
+            public const string AREA = "AREA";
+            public const string PERIMETRO = "PERIMETRO";
         }
 
         public static class Terminos
