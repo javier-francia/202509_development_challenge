@@ -8,20 +8,32 @@ using System.Threading;
 
 namespace DevelopmentChallenge.Data.Helpers
 {
+    /// <summary>
+    /// Helper de traducción para obtener textos localizados desde recursos <c>.resx</c>.
+    /// Controla la <see cref="Thread.CurrentThread.CurrentUICulture"/> según el <see cref="Idiomas"/> elegido
+    /// y expone métodos de conveniencia para formatear cadenas con parámetros.
+    /// </summary>
     public class TraduccionHelper
     {
+        /// <summary>
+        /// Administrador de recursos generado por la clase <c>Recursos</c>.
+        /// </summary>
         private static readonly ResourceManager _rm = Recursos.ResourceManager;
 
+        /// <summary>
+        /// Crea una nueva instancia configurando la cultura UI según el idioma indicado.
+        /// </summary>
+        /// <param name="idioma">Idioma a utilizar para la obtención de recursos.</param>
         public TraduccionHelper(Idiomas idioma)
         {
-            CambiarCulturaUi(idioma);
+            CambiarIdiomaCulturaUi(idioma);
         }
 
         /// <summary>
-        /// Permite cambiar la cultura UI actual.
-        /// Si preferís un enum de Idioma, podés mapearlo a CultureInfo acá.
+        /// Cambia el idioma de la cultura de interfaz de usuario (<see cref="Thread.CurrentThread.CurrentUICulture"/>) a partir del enum de <see cref="Idiomas"/>.
         /// </summary>
-        public static void CambiarCulturaUi(Idiomas idioma)
+        /// <param name="idioma">Idioma deseado.</param>
+        public static void CambiarIdiomaCulturaUi(Idiomas idioma)
         {
             var codigoCultura = string.Empty;
 
@@ -42,24 +54,41 @@ namespace DevelopmentChallenge.Data.Helpers
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(codigoCultura);
         }
 
+        /// <summary>
+        /// Traduce una clave sin parámetros.
+        /// </summary>
+        /// <param name="clave">Clave de recurso a buscar.</param>
+        /// <returns>Texto localizado correspondiente a la clave.</returns>
+        /// <exception cref="ArgumentException">Si la clave es nula o vacía.</exception>
+        /// <exception cref="KeyNotFoundException">Si no existe un recurso para la clave en la cultura actual.</exception>
+
         public string Traducir(string clave)
         {
             return TraducirConArgs(clave, args: null);
         }
 
+        /// <summary>
+        /// Traduce una clave aplicando un parámetro de formato.
+        /// </summary>
+        /// <param name="clave">Clave de recurso a buscar.</param>
+        /// <param name="valor">Valor a inyectar en <c>{0}</c>.</param>
+        /// <returns>Texto localizado formateado.</returns>
+        /// <exception cref="ArgumentException">Si la clave es nula o vacía.</exception>
+        /// <exception cref="KeyNotFoundException">Si no existe un recurso para la clave en la cultura actual.</exception>
         public string Traducir(string clave, string valor)
         {
             return TraducirConArgs(clave, new[] { valor });
         }
 
-        public string Traducir(string clave, string valor1, string valor2)
-        {
-            return TraducirConArgs(clave, new[] { valor1, valor2 });
-        }
-
         /// <summary>
-        /// Devuelve el string localizado para la clave indicada y aplica string.Format con los argumentos.
+        /// Obtiene el recurso asociado a la clave y aplica <see cref="string.Format(IFormatProvider, string, object[])"/>
+        /// con la cultura actual del hilo para formatear los argumentos provistos.
         /// </summary>
+        /// <param name="clave">Clave de recurso a buscar.</param>
+        /// <param name="args">Argumentos opcionales para formatear el texto (puede ser <c>null</c> o vacío).</param>
+        /// <returns>Texto localizado (formateado si se proveyeron argumentos).</returns>
+        /// <exception cref="ArgumentException">Si la clave es nula o vacía.</exception>
+        /// <exception cref="KeyNotFoundException">Si no existe un recurso para la clave en la cultura actual.</exception>
         private string TraducirConArgs(string clave, params object[] args)
         {
             if (string.IsNullOrWhiteSpace(clave))

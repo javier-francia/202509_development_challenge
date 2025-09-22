@@ -147,8 +147,20 @@
   <data name="PERIMETRO" xml:space="preserve">
     <value>Perímetro {0}</value>
   </data>
+  <data name="RECTANGULO_PLURAL" xml:space="preserve">
+    <value>{0} Rectángulos</value>
+  </data>
+  <data name="RECTANGULO_SINGULAR" xml:space="preserve">
+    <value>{0} Rectángulo</value>
+  </data>
   <data name="TOTAL" xml:space="preserve">
     <value>TOTAL</value>
+  </data>
+  <data name="TRAPECIO_PLURAL" xml:space="preserve">
+    <value>{0} Trapecios</value>
+  </data>
+  <data name="TRAPECIO_SINGULAR" xml:space="preserve">
+    <value>{0} Trapecio</value>
   </data>
   <data name="TRIANGULO_PLURAL" xml:space="preserve">
     <value>{0} Triángulos</value>

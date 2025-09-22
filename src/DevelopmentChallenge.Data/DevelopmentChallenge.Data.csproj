@@ -46,7 +46,11 @@
   <ItemGroup>
     <Compile Include="Enums\Idiomas.cs" />
     <Compile Include="Enums\TipoFormas.cs" />
+    <Compile Include="Helpers\FormasHelper.cs" />
+    <Compile Include="Helpers\GeneracionContenidoHelper.cs" />
     <Compile Include="Localizacion\ClavesRecursos.cs" />
+    <Compile Include="Models\Rectangulo.cs" />
+    <Compile Include="Models\Trapecio.cs" />
     <Compile Include="Process.cs" />
     <Compile Include="Helpers\TraduccionHelper.cs" />
     <Compile Include="Models\Circulo.cs" />

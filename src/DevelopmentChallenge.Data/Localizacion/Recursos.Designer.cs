@@ -151,11 +151,47 @@ namespace DevelopmentChallenge.Data.Localizacion {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} Rectangles.
+        /// </summary>
+        internal static string RECTANGULO_PLURAL {
+            get {
+                return ResourceManager.GetString("RECTANGULO_PLURAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} Rectangle.
+        /// </summary>
+        internal static string RECTANGULO_SINGULAR {
+            get {
+                return ResourceManager.GetString("RECTANGULO_SINGULAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TOTAL.
         /// </summary>
         internal static string TOTAL {
             get {
                 return ResourceManager.GetString("TOTAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} Trapezoids.
+        /// </summary>
+        internal static string TRAPECIO_PLURAL {
+            get {
+                return ResourceManager.GetString("TRAPECIO_PLURAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} Trapezoid.
+        /// </summary>
+        internal static string TRAPECIO_SINGULAR {
+            get {
+                return ResourceManager.GetString("TRAPECIO_SINGULAR", resourceCulture);
             }
         }
         

@@ -4,8 +4,6 @@ using DevelopmentChallenge.Data.Enums;
 using DevelopmentChallenge.Data.Models;
 using NUnit.Framework;
 using System;
-using System.Globalization;
-using System.Threading;
 using DevelopmentChallenge.Data.Helpers;
 
 namespace DevelopmentChallenge.Data.Tests
@@ -207,5 +205,55 @@ namespace DevelopmentChallenge.Data.Tests
                 t.Traducir("CLAVE_QUE_NO_EXISTE");
             });
         }
+
+        [TestCase(
+            Idiomas.Castellano,
+            "<h1>Reporte de Formas</h1>2 Rectángulos | Área 15,75 | Perímetro 22 <br/>TOTAL:<br/>2 formas Perímetro 22 Área 15,75")]
+        [TestCase(
+            Idiomas.Ingles,
+            "<h1>Shapes report</h1>2 Rectangles | Area 15,75 | Perimeter 22 <br/>TOTAL:<br/>2 shapes Perimeter 22 Area 15,75")]
+        [TestCase(
+            Idiomas.Italiano,
+            "<h1>Report delle Forme</h1>2 Rettangoli | Area 15,75 | Perimetro 22 <br/>TOTAL:<br/>2 forme Perimetro 22 Area 15,75")]
+        public void Dado_Rectangulos_Cuando_Imprimir_Entonces_LineaYTotalesCorrectos(Idiomas idioma, string esperado)
+        {
+            // Arrange
+            var formas = new List<FormaGeometrica>
+            {
+                new Rectangulo(3m, 4m),
+                new Rectangulo(2.5m, 1.5m)
+            };
+
+            // Act
+            var resultado = Process.Imprimir(formas, idioma);
+
+            // Assert
+            Assert.AreEqual(esperado, resultado);
+        }
+
+        [TestCase(
+            Idiomas.Castellano,
+            "<h1>Reporte de Formas</h1>1 Trapecio | Área 32 | Perímetro 26 <br/>TOTAL:<br/>1 forma Perímetro 26 Área 32")]
+        [TestCase(
+            Idiomas.Ingles,
+            "<h1>Shapes report</h1>1 Trapezoid | Area 32 | Perimeter 26 <br/>TOTAL:<br/>1 shape Perimeter 26 Area 32")]
+        [TestCase(
+            Idiomas.Italiano,
+            "<h1>Report delle Forme</h1>1 Trapezio | Area 32 | Perimetro 26 <br/>TOTAL:<br/>1 forma Perimetro 26 Area 32")]
+        public void Dado_Trapecio_Cuando_Imprimir_Entonces_LineaYTotalesCorrectos(Idiomas idioma, string esperado)
+        {
+            // Arrange
+            var formas = new List<FormaGeometrica>
+            {
+                new Trapecio(10, 6, 4, 5, 5)
+            };
+
+            // Act
+            var resultado = Process.Imprimir(formas, idioma);
+
+            // Assert
+            Assert.AreEqual(esperado, resultado);
+        }
+
     }
 }
