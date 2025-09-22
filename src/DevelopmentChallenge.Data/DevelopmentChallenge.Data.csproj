@@ -44,8 +44,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\FormaGeometrica.cs" />
+    <Compile Include="Enums\Idiomas.cs" />
+    <Compile Include="Enums\TipoFormas.cs" />
+    <Compile Include="Helpers\FormasHelper.cs" />
+    <Compile Include="Helpers\GeneracionContenidoHelper.cs" />
+    <Compile Include="Localizacion\ClavesRecursos.cs" />
+    <Compile Include="Models\Rectangulo.cs" />
+    <Compile Include="Models\Trapecio.cs" />
+    <Compile Include="Process.cs" />
+    <Compile Include="Helpers\TraduccionHelper.cs" />
+    <Compile Include="Models\Circulo.cs" />
+    <Compile Include="Models\Cuadrado.cs" />
+    <Compile Include="Models\FormaGeometrica.cs" />
+    <Compile Include="Models\TrianguloEquilatero.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Localizacion\Recursos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recursos.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Localizacion\Recursos.es.resx" />
+    <EmbeddedResource Include="Localizacion\Recursos.it.resx" />
+    <EmbeddedResource Include="Localizacion\Recursos.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Recursos.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
