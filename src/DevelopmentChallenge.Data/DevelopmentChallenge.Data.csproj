@@ -31,8 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,8 +44,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\FormaGeometrica.cs" />
+    <Compile Include="Enums\Idiomas.cs" />
+    <Compile Include="Enums\TipoFormas.cs" />
+    <Compile Include="Localizacion\ClavesRecursos.cs" />
+    <Compile Include="Process.cs" />
+    <Compile Include="Helpers\TraduccionHelper.cs" />
+    <Compile Include="Models\Circulo.cs" />
+    <Compile Include="Models\Cuadrado.cs" />
+    <Compile Include="Models\FormaGeometrica.cs" />
+    <Compile Include="Models\TrianguloEquilatero.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Localizacion\Recursos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recursos.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Localizacion\Recursos.es.resx" />
+    <EmbeddedResource Include="Localizacion\Recursos.it.resx" />
+    <EmbeddedResource Include="Localizacion\Recursos.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Recursos.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

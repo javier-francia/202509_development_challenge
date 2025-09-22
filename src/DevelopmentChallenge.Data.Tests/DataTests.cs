@@ -9,7 +9,7 @@ namespace DevelopmentChallenge.Data.Tests
     [TestFixture]
     public class DataTests
     {
-        [TestCase]
+        [Test]
         public void TestResumenListaVacia()
         {
             // Arrange
@@ -22,7 +22,7 @@ namespace DevelopmentChallenge.Data.Tests
             Assert.AreEqual("<h1>Lista vacía de formas!</h1>", resultado);
         }
 
-        [TestCase]
+        [Test]
         public void TestResumenListaVaciaFormasEnIngles()
         {
             // Arrange
@@ -35,12 +35,12 @@ namespace DevelopmentChallenge.Data.Tests
             Assert.AreEqual("<h1>Empty list of shapes!</h1>", resultado);
         }
 
-        [TestCase]
+        [Test]
         public void TestResumenListaConUnCuadrado()
         {
             // Arrange
             var formas = new List<FormaGeometrica> {new Cuadrado(5)};
-            var resultadoEsperado = "<h1>Reporte de Formas</h1>1 Cuadrado | Area 25 | Perimetro 20 <br/>TOTAL:<br/>1 formas Perimetro 20 Area 25";
+            var resultadoEsperado = "<h1>Reporte de Formas</h1>1 Cuadrado | Area 25 | Perimetro 20 <br/>TOTAL:<br/>1 forma Perimetro 20 Area 25";
             // Act
             var resultado = Process.Imprimir(formas, Idiomas.Castellano);
 
@@ -48,7 +48,7 @@ namespace DevelopmentChallenge.Data.Tests
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 
-        [TestCase]
+        [Test]
         public void TestResumenListaConMasCuadrados()
         {
             // Arrange
@@ -68,7 +68,7 @@ namespace DevelopmentChallenge.Data.Tests
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 
-        [TestCase]
+        [Test]
         public void TestResumenListaConMasTipos()
         {
             // Arrange
@@ -92,7 +92,7 @@ namespace DevelopmentChallenge.Data.Tests
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 
-        [TestCase]
+        [Test]
         public void TestResumenListaConMasTiposEnCastellano()
         {
             // Arrange
